@@ -17,9 +17,13 @@ app.post("/register",(req,res)=>{
     const name = req.body.name;
     const username = req.body.username;
     const password = req.body.password;
+    const balance = 1000;
     db.query(
-        "INSERT INTO users (name,username,password) VALUES (?,?,?)",[name,username,password],(err,result)=>{console.log(err)}
+        "INSERT INTO users (name,username,password) VALUES (?,?,?)",[name,username,password],(err,result)=>{console.log(err)}   
     );
+    db.query(
+        "INSERT INTO balance (username,available_balance) VALUES (?,?)",[username,balance],(err,result)=>{console.log(err)}
+    )
 });
 
 app.post("/login",(req,res)=>{
@@ -43,6 +47,114 @@ app.post("/login",(req,res)=>{
         }
     )
 })
+
+app.post("/user",(req,res)=>{
+    const send = req.body.send;
+    const recv = req.body.recv;
+    const amount = req.body.amount;
+    var num = 0;
+    var bal = 0;
+    const descr = req.body.descr;
+    db.query(
+        "SELECT available_balance FROM balance WHERE USERNAME=?",[send],(err,result)=>{
+            if(result[0].available_balance>amount){
+                bal=result[0].available_balance-amount;
+                console.log(bal);
+                db.query(
+                    "INSERT INTO transaction (send_username, recv_username, amount, description) values (?,?,?,?)",[send,recv,amount,descr],(err,result)=>{
+                        if(err){
+                            res.send({err:err})
+                        }
+                        else{
+                            res.send({message:"Transaction successful!"})
+                        }
+                    }
+                );
+                db.query(
+                    "UPDATE balance SET available_balance=? where username=?",[bal,send],(err,result)=>{
+                        if(err){
+                            console.log(err)
+                        }
+                        else{
+                            console.log("Updated")
+                        }
+                    }
+                )
+                db.query(
+                    "SELECT available_balance FROM balance WHERE USERNAME=?",[recv],(err,result)=>{
+                        num=parseInt(amount)+parseInt(result[0].available_balance);
+                        console.log(num);
+                        db.query(
+
+                            "UPDATE balance SET available_balance=? where username=?",[num,recv],(err,result)=>{
+                                if(err){
+                                    console.log(err)
+                                }
+                                else{
+                                    console.log("Updated!")
+                                }
+                            }
+                        )
+                    }
+                    
+                )
+                
+            }
+            else{
+                res.send({message:"Not enough balance"});
+            }
+        }
+    );
+});
+
+app.post("/repay",(req,res)=>{
+    const sender = req.body.sender;
+    const receiver = req.body.receiver;
+    const amnt = req.body.amnt;
+    const msg = req.body.msg;
+    db.query(
+        "INSERT INTO notifications (send_username, recv_username, amount, message) values (?,?,?,?)",[sender,receiver,amnt,msg],
+        (err,result)=>{
+            if(err){
+                res.send({err:err})
+            }
+            else{
+                res.send({message:"Notified successfully!"})
+            }
+        }
+    );
+});
+
+app.post("/expend",(req,res)=>{
+    const send = req.body.send;
+    db.query(
+        "SELECT SUM(AMOUNT) AS TOTAL FROM transaction WHERE SEND_USERNAME=?",[send],
+        (err,result)=>{
+            if(err){
+                res.send({err:err})
+            }
+            else{
+                res.send(result)
+            }
+            
+        }
+    );
+});
+
+app.post("/notify", (req,res)=>{
+    const send = req.body.send;
+    db.query(
+        "SELECT * FROM notifications WHERE recv_username=?",[send],
+        (err,result)=>{
+            if(err){
+                res.send({message:"ERROR"})
+            }
+            else{
+                res.send(result)
+            }
+        }
+    );
+});
 
 app.listen(3001, ()=>{
     console.log("running server");

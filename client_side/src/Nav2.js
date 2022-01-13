@@ -1,21 +1,46 @@
 import React from "react";
 import * as ReactBootStrap from "react-bootstrap"
 import { render } from "react-dom";
+import './Nav2.css';
+import { useHistory } from "react-router";
+import { Link } from "react-scroll";
 
 function Nav(){
+    const history = useHistory();
+    const logout=()=>{
+        history.push('/')
+    }
     return(
         <>
-        <ReactBootStrap.Navbar bg="dark" variant="dark">
-            <ReactBootStrap.Container>
-            <ReactBootStrap.Navbar.Brand href="#home" style={{padding: "50px 45px"},{fontSize:"35px"}}>Pay</ReactBootStrap.Navbar.Brand>
-            <ReactBootStrap.Nav className="me-auto" style={{padding: "50px 45px"},{fontSize:"22px"}}>
-            <ReactBootStrap.Nav.Link href="/" style={{marginLeft:"20px"},{marginRight:"25px"}}>Pay to an existing user</ReactBootStrap.Nav.Link>
-            <ReactBootStrap.Nav.Link href="#features" style={{marginLeft:"30px"},{marginRight:"25px"}}>Send a reminder</ReactBootStrap.Nav.Link>
-            <ReactBootStrap.Nav.Link href="#pricing" style={{marginLeft:"30px"},{marginRight:"25px"}}>Monthly expenditure</ReactBootStrap.Nav.Link>
-            <ReactBootStrap.Nav.Link href="register" style={{marginLeft:"30px"},{marginRight:"25px"}}>Invite and earn</ReactBootStrap.Nav.Link>
-            </ReactBootStrap.Nav>
-            </ReactBootStrap.Container>
-        </ReactBootStrap.Navbar>
+        <div className="Navbar">
+            <div className="Container">
+            <Link to="/user" className="brand">Pay</Link>
+            </div>
+            <div className="parent">
+            <Link activeClass="active" 
+                    to="id1" 
+                    spy={true} 
+                    smooth={true} 
+                    duration={500} 
+                    className="child">Pay to an existing user</Link>
+            <Link activeClass="active" 
+                    to="id2" 
+                    spy={true} 
+                    smooth={true} 
+                    duration={500}  className="child">Send a reminder</Link>
+            <Link activeClass="active" 
+                    to="id3" 
+                    spy={true} 
+                    smooth={true} 
+                    duration={500}  className="child">Monthly expenditure</Link>
+            <Link activeClass="active" 
+                    to="id4" 
+                    spy={true} 
+                    smooth={true} 
+                    duration={500}  className="child">Notifications</Link>
+            </div>
+            <button className="lgt" onClick={logout}>Log-out</button>
+        </div>
         </>
     );
 }

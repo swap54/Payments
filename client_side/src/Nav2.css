@@ -1,0 +1,44 @@
+.Navbar{
+    background-color: #1f1d1d;
+    display: flex;
+    flex-direction: row;
+}
+.Container{
+    padding: 30px 50px;
+}
+.brand{
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 35px;
+    margin: 10px 100px 10px 160px;
+}
+.brand:hover{
+    color: whitesmoke;
+}
+.parent{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0px;
+}
+.child{
+    text-decoration: none;
+    color: #a39898;
+    font-size: 24px;
+    padding: 0px 70px 0px 0px;
+}
+.child:hover{
+    color: whitesmoke;
+}
+.lgt{
+    color: #a39898;
+    background-color: #1f1d1d;
+    margin: 30px 10px 30px 50px;
+    border: none;
+    font-size: 24px;
+}
+.lgt:hover{
+    color: whitesmoke;
+}
+
