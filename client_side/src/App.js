@@ -9,14 +9,7 @@ import Admin from './Admin';
 import React,{useState} from 'react';
 import {BrowserRouter, Route, Switch, Link} from 'react-router-dom'
 
-/*function App() {
-  return (
-    <>
-   <Nav />
-   <Home />
-   </>
-  );
-}*/
+\
 function App() {
   const [user,setUser] = useState("initial")
   const CallBack = (res) =>{
