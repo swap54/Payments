@@ -392,3 +392,99 @@
     left: 0px;
     color: aliceblue;
 }
+.frm5{
+    width: 480px;
+    height: 292px;
+    position: absolute;
+    padding: 15px 33px;
+    top: 1800px;
+    left: 208px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0px;
+    border-color: rgba(51, 121, 194, 0.58);
+    border-width: 2px;
+    border-style: solid;   
+    
+}
+.frm5 h1{
+    color: aliceblue;
+}
+.frm5 span{
+    color: beige;
+    font-size: 40px;
+    
+}
+.frm5 label{
+    color: rgb(245, 236, 225);
+    font-size: 20px;
+    margin: 10px 10px;
+}
+.frm5 input{
+    border-radius: 0px;
+    width: 400px;
+}
+.cta5 {
+    position: relative;
+    left: 40px;
+    top: 40px;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+   }
+   
+   .cta5:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #b1dae7;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+   }
+   
+   .cta5 span {
+    position: relative;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #193653;
+   }
+   
+   .cta5 svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #193653;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+   }
+   
+   .cta5:hover:before {
+    width: 100%;
+    background: #b1dae7;
+   }
+   
+   .cta5:hover svg {
+    transform: translateX(0);
+   }
+   
+   .cta5:active {
+    transform: scale(0.95);
+   }
+.balance{
+    position: relative;
+    left:170px;
+    top: 45px;
+    font-size: 15px;
+}

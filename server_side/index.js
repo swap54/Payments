@@ -156,6 +156,61 @@ app.post("/notify", (req,res)=>{
     );
 });
 
+app.post("/balance",(req,res)=>{
+    const send = req.body.send;
+    db.query(
+        "SELECT available_balance FROM balance WHERE username=?",[send],
+        (err,result)=>{
+            if(err){
+                res.send({message:"ERROR"})
+            }
+            else{
+                res.send(result)
+            }
+        }
+    )
+})
+
+app.post("/adminlogin",(req,res)=>{
+    const password = req.body.password;
+    db.query(
+        "SELECT * FROM admin WHERE password=?",[password],
+        (err,result)=>{
+            if(err){
+                res.send({message:"ERROR"})
+            }
+            else{
+                res.send(result)
+            }
+        }
+    )
+})
+
+app.post("/admuser",(req,res)=>{
+    db.query(
+        "SELECT * FROM users;",(err,result)=>{
+            if(err){
+                res.send({message:"ERROR"})
+            }
+            else{
+                res.send(result)
+            }
+        }
+    )
+})
+app.post("/admtran",(req,res)=>{
+    db.query(
+        "SELECT * FROM transaction;",(err,result)=>{
+            if(err){
+                res.send({message:"ERROR"})
+            }
+            else{
+                res.send(result)
+            }
+        }
+    )
+})
+
 app.listen(3001, ()=>{
     console.log("running server");
 })

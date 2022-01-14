@@ -1,5 +1,4 @@
 import React from "react";
-import * as ReactBootStrap from "react-bootstrap"
 import { render } from "react-dom";
 import './Nav2.css';
 import { useHistory } from "react-router";
@@ -38,6 +37,11 @@ function Nav(){
                     spy={true} 
                     smooth={true} 
                     duration={500}  className="child">Notifications</Link>
+            <Link activeClass="active" 
+                    to="id5" 
+                    spy={true} 
+                    smooth={true} 
+                    duration={500}  className="child">Available-balance</Link>
             </div>
             <button className="lgt" onClick={logout}>Log-out</button>
         </div>

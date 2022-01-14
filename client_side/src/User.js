@@ -22,6 +22,8 @@ function User(props){
     const [message,setMes] = useState("")
     const [arr,setarr] = useState([])
 
+    const [bal,setBal] = useState("")
+
     const transact = (e) =>{
         //setsend_usr(props.usr);
         Axios.post('http://localhost:3001/user',{send:send,recv:recv,amount:amount,descr:descr}).then((response)=>{
@@ -68,6 +70,17 @@ function User(props){
                 setarr(response.data)
             }   
         
+        })
+        e.preventDefault();
+    }
+    const balance = (e) =>{
+        Axios.post('http://localhost:3001/balance',{send:send}).then((response)=>{
+            if(response.data.message){
+                alert(response.data.message)
+            }
+            else{
+                setBal(response.data[0].available_balance)
+            }
         })
         e.preventDefault();
     }
@@ -139,8 +152,19 @@ function User(props){
                 {arr.map((not,i)=>(
                     <h3 className="not1" key={i}>{not.send_username} has asked for {not.amount} with message "{not.message}"</h3>
                 ))}
-                
-                
+                </div>
+            </form>
+            <form className="frm5" id="id5">
+                <span>Check your account balance</span>
+                <div className="container3">
+                <button className="cta5" onClick={balance}>
+                    <span>Check</span>
+                    <svg width="15px" height="10px" viewBox="0 0 13 10">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
+                </button>
+                <span className="balance">{bal}</span>
                 </div>
             </form>
             

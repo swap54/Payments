@@ -15,31 +15,15 @@
 .brand:hover{
     color: whitesmoke;
 }
-.parent{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 30px 0px;
-}
-.child{
-    text-decoration: none;
-    color: #a39898;
-    font-size: 24px;
-    padding: 0px 50px 0px 0px;
-}
-.child:hover{
-    color: whitesmoke;
-    cursor: pointer;
-}
-.lgt{
+.lgt1{
     color: #a39898;
     background-color: #1f1d1d;
     margin: 30px 10px 30px 50px;
     border: none;
     font-size: 24px;
+    position: relative;
+    left: 1300px;
 }
-.lgt:hover{
+.lgt1:hover{
     color: whitesmoke;
 }
-

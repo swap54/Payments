@@ -1,0 +1,231 @@
+.bg3{
+    content: url('./bg.svg');
+    width: 100%;
+    height: 895px;
+}
+.admfrm1{
+    width: 716px;
+    height: 502px;
+    position: absolute;
+    padding: 15px 33px;
+    top: 300px;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0px;
+    border-color: rgba(51, 121, 194, 0.58);
+    border-width: 2px;
+    border-style: solid;   
+    
+}
+.admfrm1 h1{
+    color: aliceblue;
+}
+.admfrm1 span{
+    color: beige;
+    font-size: 40px;
+    
+}
+.admfrm1 label{
+    color: rgb(245, 236, 225);
+    font-size: 20px;
+    margin: 10px 10px;
+}
+.admfrm1 input{
+    border-radius: 0px;
+    width: 400px;
+}
+.cta7 {
+    position: relative;
+    left: 40px;
+    top: 40px;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+   }
+   
+   .cta7:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #b1dae7;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+   }
+   
+   .cta7 span {
+    position: relative;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #193653;
+   }
+   
+   .cta7 svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #193653;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+   }
+   
+   .cta7:hover:before {
+    width: 100%;
+    background: #b1dae7;
+   }
+   
+   .cta7:hover svg {
+    transform: translateX(0);
+   }
+   
+   .cta7:active {
+    transform: scale(0.95);
+   }
+.tbl1{
+    position: relative;
+    top: 60px;
+    left: 70px;
+    color: aliceblue;
+}
+table{
+    border: 2px solid aliceblue;
+}
+.hd{
+    padding: 10px 20px 0px 20px;
+    border: 1px solid aliceblue;
+}
+td{
+    padding: 0px 20px;
+    border: 1px solid aliceblue;
+}
+tr{
+    border: 1px solid aliceblue;
+}
+.admfrm2{
+    width: 716px;
+    height: 502px;
+    position: absolute;
+    padding: 15px 33px;
+    top: 300px;
+    right: 100px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0px;
+    border-color: rgba(51, 121, 194, 0.58);
+    border-width: 2px;
+    border-style: solid;   
+    
+}
+.admfrm2 h1{
+    color: aliceblue;
+}
+.admfrm2 span{
+    color: beige;
+    font-size: 40px;
+    
+}
+.admfrm2 label{
+    color: rgb(245, 236, 225);
+    font-size: 20px;
+    margin: 10px 10px;
+}
+.admfrm2 input{
+    border-radius: 0px;
+    width: 400px;
+}
+.cta8 {
+    position: relative;
+    left: 40px;
+    top: 40px;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+   }
+   
+   .cta8:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #b1dae7;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+   }
+   
+   .cta8 span {
+    position: relative;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #193653;
+   }
+   
+   .cta8 svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #193653;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+   }
+   
+   .cta8:hover:before {
+    width: 100%;
+    background: #b1dae7;
+   }
+   
+   .cta8:hover svg {
+    transform: translateX(0);
+   }
+   
+   .cta8:active {
+    transform: scale(0.95);
+   }
+.tbl2{
+    position: relative;
+    top: 60px;
+    left: 10px;
+    color: aliceblue;
+    overflow-y: scroll;
+    height: 300px;
+}
+table{
+    border: 2px solid aliceblue;
+}
+.hd1{
+    padding: 5px 15px 0px 15px;
+    border: 1px solid aliceblue;
+}
+td{
+    padding: 0px 20px;
+    border: 1px solid aliceblue;
+}
+tr{
+    border: 1px solid aliceblue;
+}
+.tb{
+    
+    height: 200px;
+}
